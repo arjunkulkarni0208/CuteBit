@@ -58,7 +58,7 @@ def listen_to_mic():
 
 def main():
     sleep(1)
-    talk("Cute Bit is awake!")
+    talk(" Hi, CuteBit is awake!")
     print("CuteBit is awake!")
 
     # Send initial 'Stop' and 'Happy'

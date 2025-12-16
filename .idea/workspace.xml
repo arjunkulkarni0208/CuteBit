@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08e70db2-cd53-42e9-931c-1c6ed1cb98d1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/CuteBit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/req.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tts.py" afterDir="false" />
-    </list>
+    <list default="true" id="08e70db2-cd53-42e9-931c-1c6ed1cb98d1" name="Changes" comment="Not exactly working." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,6 +26,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/arjunkulkarni0208/CuteBit.git",
+    "accountId": "145d3d6d-69df-4154-a403-23ffd26d9087"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -107,12 +109,41 @@
       <workItem from="1765779897289" duration="5297000" />
       <workItem from="1765906670392" duration="3952000" />
       <workItem from="1765911542903" duration="136000" />
-      <workItem from="1765911745437" duration="1626000" />
+      <workItem from="1765911745437" duration="2111000" />
     </task>
+    <task id="LOCAL-00001" summary="Not exactly working.">
+      <option name="closed" value="true" />
+      <created>1765913588589</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765913588589</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Not exactly working.">
+      <option name="closed" value="true" />
+      <created>1765913823788</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765913823788</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Not exactly working.">
+      <option name="closed" value="true" />
+      <created>1765913863670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765913863670</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Not exactly working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Not exactly working." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CuteBit$main.coverage" NAME="main Coverage Results" MODIFIED="1765913267023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
