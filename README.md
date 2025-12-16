@@ -2,7 +2,7 @@
 ---
 
 # 🤖 CuteBit
-## The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled AI robot that combines a powerful **Local LLM "Brain"** (running on a host PC) with an expressive **ESP32 "Body"**. Unlike standard voice assistants, CuteBit has a physical presence, capable of moving, expressing emotions via animated eyes, and responding to natural language commands with personality.
+#### The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled AI robot that combines a powerful **Local LLM "Brain"** (running on a host PC) with an expressive **ESP32 "Body"**. Unlike standard voice assistants, CuteBit has a physical presence, capable of moving, expressing emotions via animated eyes, and responding to natural language commands with personality.
 
 ---
 
