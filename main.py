@@ -83,7 +83,6 @@ def main():
 
         # --- PARSING & ACTING ---
         try:
-            # Clean up potential markdown formatting from LLM
             clean_json = ai_content.replace('```json', '').replace('```', '').strip()
             data = json.loads(clean_json)
 
