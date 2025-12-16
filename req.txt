@@ -1,0 +1,7 @@
+ollama
+cvzone
+SpeechRecognition
+pyaudio
+pyserial
+edge-tts
+playsound
