@@ -102,9 +102,9 @@ def main():
             print("Error: AI didn't output valid JSON.")
             print("Raw output:", ai_content)
 
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\nCaught KeyboardInterrupt")
-        exit()
+# if __name__ == "__main__":
+#     try:
+#         main()
+#     except KeyboardInterrupt:
+#         print("\nCaught KeyboardInterrupt")
+#         exit()
