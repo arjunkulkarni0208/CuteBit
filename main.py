@@ -7,8 +7,8 @@ from tts import talk
 
 # --- HARDWARE SETUP ---
 
-car = SerialObject("COM11", 115200, digits=2) # Note: digits=2 for [move, emotion]
 
+car = SerialObject("COM11", 115200, digits=2) # Note: digits=2 for [move, emotion]
 
 # --- SYSTEM PROMPT ---
 # This tells the AI who it is and how to control the body.
