@@ -14,7 +14,7 @@ try:
     car.reset_input_buffer()
     print("✅ Connected to CuteBit via Serial")
 except:
-    print("⚠️ Robot not connected. Running in simulation mode.")
+    print("⚠️ CuteBit is not connected. Running in simulation mode.")
     car = None
 
 SYSTEM_PROMPT = """
