@@ -35,7 +35,8 @@ The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled 
 
 ---
 
-## ⚙️ ArchitectureCuteBit uses a **Master-Slave Serial Protocol** to bridge high-level AI reasoning with low-level hardware control.
+## ⚙️ Architecture
+CuteBit uses a **Master-Slave Serial Protocol** to bridge high-level AI reasoning with low-level hardware control.
 
 1. **Input:** User speaks a command (e.g., *"CuteBit, come here and look happy!"*).
 2. **Reasoning:** The Python script captures audio, converts it to text, and feeds it to the Local LLM with a strict System Prompt.
