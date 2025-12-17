@@ -7,12 +7,12 @@ from time import sleep
 
 # --- SERIAL SETUP (Standard Industry Way) ---
 try:
-    # timeout=1 prevents hanging if Arduino disconnects
-    car = serial.Serial("COM11", 115200, timeout=1)
-    time.sleep(2) # CRITICAL: Wait for Arduino to reboot after connection
+    car = serial.Serial("COM11", 9600, timeout=10)
+    time.sleep(3)
+    car.reset_input_buffer()
     print("✅ Connected to CuteBit via Serial")
 except:
-    print("⚠️ Arduino not connected. Running in simulation mode.")
+    print("⚠️ ESP not connected. Running in simulation mode.")
     car = None
 
 SYSTEM_PROMPT = """

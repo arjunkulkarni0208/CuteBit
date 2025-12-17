@@ -1,107 +1,104 @@
+# WORKING!
+
 import ollama
 import json
 import speech_recognition as sr
-from cvzone.SerialModule import SerialObject
+import serial
+import tts
 from time import sleep
-from tts import talk
 
-# --- HARDWARE SETUP ---
-car = SerialObject("COM11", 115200, digits=2) # Note: digits=2 for [move, emotion]
+# --- SERIAL SETUP (Standard Industry Way) ---
+try:
+    car = serial.Serial("COM11", 9600, timeout=10)
+    sleep(3)
+    car.reset_input_buffer()
+    print("✅ Connected to CuteBit via Serial")
+except:
+    print("⚠️ ESP not connected. Running in simulation mode.")
+    car = None
 
-# --- SYSTEM PROMPT ---
-# This tells the AI who it is and how to control the body.
 SYSTEM_PROMPT = """
-You are CuteBit, a helpful and expressive robot assistant. 
-You control a physical body with motors and a face.
-You MUST reply in valid JSON format ONLY. 
-Do not write normal text outside the JSON.
-
-The JSON format is:
-{
-    "response": "Your verbal reply to the user here.",
-    "action": "move_command",
-    "emotion": "emotion_command"
-}
-
-Available "action" values: "stop", "forward", "backward", "left", "right"
-Available "emotion" values: "happy", "angry", "default", "tired"
-
-Example: If user says "Come here!", you reply:
-{"response": "Coming to you!", "action": "forward", "emotion": "happy"}
+You are CuteBit, a helpful robot. Reply in JSON ONLY.
+Format: {"response": "text", "action": "move_cmd", "emotion": "emote_cmd"}
+Actions: stop, forward, backward, left, right
+Emotions: happy, angry, tired, neutral
 """
 
-def execute_robot_command(action, emotion):
-    # Map text commands to your Arduino numbers
+def send_robot_command(action_id, emotion_id):
+    """
+    Sends a formatted string "action,emotion\n" directly to Arduino.
+    Example: "1,2\n"
+    """
+    if car:
+        # Create string "1,2\n"
+        command = f"{action_id},{emotion_id}\n"
+        # Encode to bytes and write
+        car.write(command.encode('utf-8'))
+        print(f"📤 Sent: {command.strip()}")
+    else:
+        print(f"🚫 Simulating: {action_id}, {emotion_id}")
+
+def execute_logic(action, emotion):
+    # Map text to numbers
     move_map = {"stop": 0, "forward": 1, "right": 2, "left": 3, "backward": 4}
-    emotion_map = {"happy": 0, "angry": 1, "default": 2, "tired": 3}
+    emotion_map = {"neutral": 0, "happy": 1, "angry": 2, "tired": 3}
 
     m_val = move_map.get(action, 0)
     e_val = emotion_map.get(emotion, 0)
-    pack = [int(m_val), int(e_val)]
-    print(f"🤖 ACTING: Move={action} ({m_val}), Face={emotion} ({e_val})")
-    car.sendData(pack)
-    print("Sent")
+
+    send_robot_command(m_val, e_val)
 
 def listen_to_mic():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("\n🎤 Listening...")
-        audio = r.listen(source)
-    try:
-        text = r.recognize_google(audio)
-        print(f"User said: {text}")
-        return text
-    except:
-        return ""
+        # Reduce background noise
+        r.adjust_for_ambient_noise(source, duration=0.5)
+        try:
+            audio = r.listen(source, timeout=5, phrase_time_limit=5)
+            text = r.recognize_google(audio)
+            print(f"User: {text}")
+            return text
+        except:
+            return ""
 
 def main():
-    sleep(1)
-    talk(" Hi, CuteBit is awake!")
-    print("CuteBit is awake!")
-
-    # Send initial 'Stop' and 'Happy'
-    execute_robot_command("stop", "happy")
+    # Initial handshake
+    execute_logic("stop", "happy")
 
     while True:
         user_input = listen_to_mic()
+        if not user_input: continue
+        if "exit" in user_input.lower(): break
 
-        if not user_input:
-            continue
-
-        if "exit" in user_input.lower():
-            break
-
-        # --- THINKING (Ollama) ---
+        # --- AI THINKING ---
         response = ollama.chat(model='llama3', messages=[
             {'role': 'system', 'content': SYSTEM_PROMPT},
             {'role': 'user', 'content': user_input},
         ])
 
-        ai_content = response['message']['content']
-
-        # --- PARSING & ACTING ---
         try:
-            clean_json = ai_content.replace('```json', '').replace('```', '').strip()
+            # Parse JSON
+            content = response['message']['content']
+            clean_json = content.replace('```json', '').replace('```', '').strip()
             data = json.loads(clean_json)
 
-            talk(data['response'])
-            print(f"CuteBit: {data['response']}")
+            print(f"🤖 CuteBit: {data['response']}")
+            tts.talk(data['response'])
 
-            # 2. Move & Emote
-            execute_robot_command(data.get('action', 'stop'), data.get('emotion', 'happy'))
+            # Execute
+            execute_logic(data.get('action', 'stop'), data.get('emotion', 'happy'))
 
-            # 3. Simple logic to stop after moving (so it doesn't crash)
-            if data.get('action') in ["forward", "backward", "left", "right"]:
-                sleep(3) # Move for 3 seconds
-                execute_robot_command("stop", data.get('emotion', 'happy'))
+            # Simple duration logic for movement
+            if data.get('action') != "stop":
+                sleep(2)
+                execute_logic("stop", data.get('emotion', 'happy'))
 
-        except json.JSONDecodeError:
-            print("Error: AI didn't output valid JSON.")
-            print("Raw output:", ai_content)
+        except:
+            print("❌ AI Error")
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\nCaught KeyboardInterrupt")
         exit()
