@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08e70db2-cd53-42e9-931c-1c6ed1cb98d1" name="Changes" comment="Testing" />
+    <list default="true" id="08e70db2-cd53-42e9-931c-1c6ed1cb98d1" name="Changes" comment="Testing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edge_output.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,18 +31,18 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "arjunkulkarni0208"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;arjunkulkarni0208&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/arjunkulkarni0208/CuteBit.git",
-    "accountId": "145d3d6d-69df-4154-a403-23ffd26d9087"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/arjunkulkarni0208/CuteBit.git&quot;,
+    &quot;accountId&quot;: &quot;145d3d6d-69df-4154-a403-23ffd26d9087&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -117,6 +121,8 @@
       <workItem from="1765906670392" duration="3952000" />
       <workItem from="1765911542903" duration="136000" />
       <workItem from="1765911745437" duration="3480000" />
+      <workItem from="1765975610147" duration="419000" />
+      <workItem from="1765986792780" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="Not exactly working.">
       <option name="closed" value="true" />
@@ -174,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765915468661</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Testing">
+      <option name="closed" value="true" />
+      <created>1765975782431</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765975782431</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +200,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CuteBit$main.coverage" NAME="main Coverage Results" MODIFIED="1765913267023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CuteBit$main.coverage" NAME="main Coverage Results" MODIFIED="1765975693754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
