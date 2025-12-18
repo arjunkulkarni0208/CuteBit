@@ -6,6 +6,7 @@ import speech_recognition as sr
 import serial
 import tts
 from time import sleep
+from fast-whisper
 
 # --- SERIAL SETUP (Standard Industry Way) ---
 try:
