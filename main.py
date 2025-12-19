@@ -12,9 +12,9 @@ try:
     car = serial.Serial("COM11", 9600, timeout=10)
     sleep(3)
     car.reset_input_buffer()
-    print("✅ Connected to CuteBit via Serial")
+    print(" Connected to CuteBit via Serial")
 except:
-    print("⚠️ CuteBit is not connected. Running in simulation mode.")
+    print(" CuteBit is not connected. Running in simulation mode.")
     car = None
 
 SYSTEM_PROMPT = """
@@ -35,9 +35,9 @@ def send_robot_command(action_id, emotion_id):
         command = f"{action_id},{emotion_id}\n"
         # Encode to bytes and write
         car.write(command.encode('utf-8'))
-        print(f"📤 Sent: {command.strip()}")
+        print(f" Sent: {command.strip()}")
     else:
-        print(f"🚫 Simulating: {action_id}, {emotion_id}")
+        print(f" Simulating: {action_id}, {emotion_id}")
 
 def execute_logic(action, emotion):
     # Map text to numbers
@@ -52,7 +52,7 @@ def execute_logic(action, emotion):
 def listen_to_mic():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("\n🎤 Listening...")
+        print("\n Listening...")
         # Reduce background noise
         r.adjust_for_ambient_noise(source, duration=0.5)
         try:
@@ -74,7 +74,7 @@ def main():
         if "exit" in user_input.lower(): break
 
         # --- AI THINKING ---
-        response = ollama.chat(model='phi3', messages=[
+        response = ollama.chat(model='llama3', messages=[
             {'role': 'system', 'content': SYSTEM_PROMPT},
             {'role': 'user', 'content': user_input},
         ])
@@ -89,7 +89,7 @@ def main():
             # Execute
             execute_logic(data.get('action', 'stop'), data.get('emotion', 'default'))
 
-            print(f"🤖 CuteBit: {data['response']}")
+            print(f" CuteBit: {data['response']}")
             tts.talk(data['response'])
 
             # Simple duration logic for movement
@@ -98,7 +98,7 @@ def main():
                 execute_logic("stop", data.get('emotion', 'default'))
 
         except Exception as e:
-            print(e)
+            print(f"AI Error - {e}")
 
 if __name__ == "__main__":
     try:
