@@ -1,5 +1,4 @@
 ollama
-cvzone
 SpeechRecognition
 pyaudio
 pyserial
