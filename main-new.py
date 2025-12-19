@@ -6,7 +6,7 @@ import speech_recognition as sr
 import serial
 import tts
 from time import sleep
-from fast-whisper
+from fasttts import listen_fast
 
 # --- SERIAL SETUP (Standard Industry Way) ---
 try:
@@ -56,7 +56,7 @@ def main():
     execute_logic("stop", "neutral")
 
     while True:
-        user_input = listen_to_mic()
+        user_input = listen_fast()
         #user_input = input("Text: ")
         if not user_input: continue
         if "exit" in user_input.lower(): break
@@ -85,8 +85,8 @@ def main():
                 sleep(2)
                 execute_logic("stop", data.get('emotion', 'default'))
 
-        except:
-            print("❌ AI Error")
+        except Exception as e:
+            print(e)
 
 if __name__ == "__main__":
     try:

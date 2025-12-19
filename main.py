@@ -97,8 +97,8 @@ def main():
                 sleep(2)
                 execute_logic("stop", data.get('emotion', 'default'))
 
-        except:
-            print("❌ AI Error")
+        except Exception as e:
+            print(e)
 
 if __name__ == "__main__":
     try:

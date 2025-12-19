@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08e70db2-cd53-42e9-931c-1c6ed1cb98d1" name="Changes" comment="Working!">
-      <change afterPath="$PROJECT_DIR$/fast-whisper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main-new.py" beforeDir="false" afterPath="$PROJECT_DIR$/main-new.py" afterDir="false" />
     </list>
@@ -127,7 +126,8 @@
       <workItem from="1765986792780" duration="5382000" />
       <workItem from="1766000562976" duration="1956000" />
       <workItem from="1766048004720" duration="1002000" />
-      <workItem from="1766077458120" duration="1117000" />
+      <workItem from="1766077458120" duration="2014000" />
+      <workItem from="1766079501808" duration="514000" />
     </task>
     <task id="LOCAL-00001" summary="Not exactly working.">
       <option name="closed" value="true" />
@@ -265,7 +265,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766077931886</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Working!">
+      <option name="closed" value="true" />
+      <created>1766078588627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1766078588627</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Working!">
+      <option name="closed" value="true" />
+      <created>1766078662167</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1766078662167</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,8 +294,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Working!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CuteBit$main_new.coverage" NAME="main-new Coverage Results" MODIFIED="1765990221977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CuteBit$main.coverage" NAME="main Coverage Results" MODIFIED="1766077781768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CuteBit$main_new.coverage" NAME="main-new Coverage Results" MODIFIED="1766080001679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CuteBit$main.coverage" NAME="main Coverage Results" MODIFIED="1766080055161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CuteBit$test.coverage" NAME="test Coverage Results" MODIFIED="1765989306799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
