@@ -8,7 +8,7 @@ int r1 = 18;
 int r2 = 19;
 int ir = 4;
 
-int rt = 360;
+int rt = 350;
 int lt = 320;
 
 #define SCREEN_WIDTH 128
@@ -33,41 +33,11 @@ void setup() {
   roboEyes.begin(SCREEN_WIDTH, SCREEN_HEIGHT, 100);
 
   roboEyes.setAutoblinker(ON, 3, 2); // Start auto blinker animation cycle -> bool active, int interval, int variation -> turn on/off, set interval between each blink in full seconds, set range for random interval variation in full seconds
-  //roboEyes.setIdleMode(ON, 2, 2); 
+  roboEyes.setIdleMode(ON, 2, 4); 
   // Start idle animation cycle (eyes looking in random directions) -> turn on/off, set interval between each eye repositioning in full seconds, set range for random time interval variation in full seconds
-  
-
-
 }
 
-void front(int t=0){
-  digitalWrite(l1,LOW);
-  digitalWrite(r1,HIGH);
-  digitalWrite(l2,HIGH);
-  digitalWrite(r2,LOW);
-  delay(t);
-}
-void back(int t=0){
-  digitalWrite(l1,HIGH);
-  digitalWrite(r1,LOW);
-  digitalWrite(l2,LOW);
-  digitalWrite(r2,HIGH);
-  delay(t);
-}
-void right(int t=0){
-  digitalWrite(l1,LOW);
-  digitalWrite(r1,LOW);
-  digitalWrite(l2,HIGH);
-  digitalWrite(r2,HIGH);
-  delay(t);
-}
-void left(int t=0){
-  digitalWrite(l1,HIGH);
-  digitalWrite(r1,HIGH);
-  digitalWrite(l2,LOW);
-  digitalWrite(r2,LOW);
-  delay(t);
-}
+
 void stop(int t=0){
   digitalWrite(l1,LOW);
   digitalWrite(r1,LOW);
@@ -75,6 +45,39 @@ void stop(int t=0){
   digitalWrite(r2,LOW);
   delay(t);
 }
+void front(int t=0){
+  digitalWrite(l1,LOW);
+  digitalWrite(r1,HIGH);
+  digitalWrite(l2,HIGH);
+  digitalWrite(r2,LOW);
+  delay(t);
+  stop();
+}
+void back(int t=0){
+  digitalWrite(l1,HIGH);
+  digitalWrite(r1,LOW);
+  digitalWrite(l2,LOW);
+  digitalWrite(r2,HIGH);
+  delay(t);
+  stop();
+}
+void right(int t=0){
+  digitalWrite(l1,LOW);
+  digitalWrite(r1,LOW);
+  digitalWrite(l2,HIGH);
+  digitalWrite(r2,HIGH);
+  delay(t);
+  stop();
+}
+void left(int t=0){
+  digitalWrite(l1,HIGH);
+  digitalWrite(r1,HIGH);
+  digitalWrite(l2,LOW);
+  digitalWrite(r2,LOW);
+  delay(t);
+  stop();
+}
+
 
 
 void loop() {
@@ -95,18 +98,31 @@ void loop() {
       // Movement
       switch(moveVal){
         case 0: stop(); break;
-        case 1: front(); break;
-        case 2: right(); break;
-        case 3: left(); break;
-        case 4: back(); break;
+        case 1: front(1500); break;
+        case 2: right(rt); break;
+        case 3: left(lt); break;
+        case 4: back(1500); break;
       }
 
       // Emotion
       switch(emoteVal){
-        case 0: roboEyes.setMood(DEFAULT); break;
-        case 1: roboEyes.setMood(HAPPY); break;
-        case 2: roboEyes.setMood(ANGRY); break;
-        case 3: roboEyes.setMood(TIRED); break;
+        case 0: 
+          roboEyes.setIdleMode(ON);
+          roboEyes.setMood(DEFAULT); 
+          break;
+        case 1: 
+          roboEyes.setIdleMode(OFF); 
+          roboEyes.anim_laugh();
+          roboEyes.setMood(HAPPY); 
+          break;
+        case 2: 
+          roboEyes.setIdleMode(OFF);
+          roboEyes.setMood(ANGRY);
+          break;
+        case 3: 
+          roboEyes.setIdleMode(OFF);
+          roboEyes.setMood(TIRED); 
+          break;
       }
     }
   }
