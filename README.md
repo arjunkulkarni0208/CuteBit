@@ -65,4 +65,3 @@ CuteBit uses a **Master-Slave Serial Protocol** to bridge high-level AI reasonin
 
 ---
 
-###**Would you like me to generate the "System Prompt" text file specifically for the LLM next?**
