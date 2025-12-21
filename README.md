@@ -28,6 +28,7 @@ The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled 
 
 ### **Software*** **Firmware:** Arduino IDE (C++)
 * **Backend:** Python 3.10+
+* **Communication:** VirtualHere Client
 * **AI Model:** Ollama (Llama 3 / Mistral)
 * **Libraries:**
 * *Python:* `ollama`, `SpeechRecognition`, `pyserial`, `edgetts`
