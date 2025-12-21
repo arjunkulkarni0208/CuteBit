@@ -8,6 +8,7 @@ The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled 
 ## 🌟 Key Features **🧠 Local AI Brain:** Powered by **Ollama (Llama 3)** running locally on a PC/Laptop for privacy and offline capability.
 * **👀 Expressive Eyes:** Features a 128x64 OLED display running the **FluxGarage RoboEyes** engine to show emotions (Happy, Angry, Tired, Neutral) synced with its actions.
 * **🗣️ Voice Control:** Listens to natural speech commands via Python `SpeechRecognition` and converts intent into physical actions.
+* ** Speech ** Talks to us in a human voice.
 * **🔌 Hybrid Architecture:**
 * **The Brain (Python):** Handles speech-to-text, LLM reasoning, and command parsing.
 * **The Body (C++/Arduino):** Handles real-time motor control and display rendering.
@@ -18,17 +19,19 @@ The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled 
 ---
 
 ## 🛠️ Tech Stack 
-### **Hardware*** **Microcontroller:** ESP32 (DOIT DEVKIT V1)
+### **Hardware**
+* **Microcontroller:** ESP32 (DOIT DEVKIT V1)
 * **Display:** 0.96" OLED Display (128x64, I2C, SSD1306 Driver)
 * **Motors:** 2x DC Gear Motors with Driver (L298N/L293D)
 * **Host Machine:** Laptop/PC (Running the AI Brain)
+* **Wireless USB hub:** Raspberry Pi 3B running VirtualHere (to connect ESP32 to Laptop wirelessly)
 
 ### **Software*** **Firmware:** Arduino IDE (C++)
 * **Backend:** Python 3.10+
 * **AI Model:** Ollama (Llama 3 / Mistral)
 * **Libraries:**
-* *Python:* `ollama`, `cvzone`, `SpeechRecognition`, `pyserial`
-* *Arduino:* `FluxGarage RoboEyes`, `Adafruit SSD1306`, `cvzone`
+* *Python:* `ollama`, `SpeechRecognition`, `pyserial`, `edgetts`
+* *Arduino:* `FluxGarage RoboEyes`, `Adafruit SSD1306`,
 
 
 
@@ -52,6 +55,7 @@ CuteBit uses a **Master-Slave Serial Protocol** to bridge high-level AI reasonin
 
 4. **Execution:** Python sends a serial packet `[1, 1]` (Action ID, Emotion ID) to the ESP32.
 5. **Reaction:** The ESP32 triggers the motors and updates the OLED eye animation instantly.
+6. **Speech** The verbal response goes to Edge TTS Engine.
 
 ---
 
