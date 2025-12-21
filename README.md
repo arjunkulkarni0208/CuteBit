@@ -8,13 +8,13 @@ The Expressive AI Desktop Robot **CuteBit** is an open-source, voice-controlled 
 ## 🌟 Key Features **🧠 Local AI Brain:** Powered by **Ollama (Llama 3)** running locally on a PC/Laptop for privacy and offline capability.
 * **👀 Expressive Eyes:** Features a 128x64 OLED display running the **FluxGarage RoboEyes** engine to show emotions (Happy, Angry, Tired, Neutral) synced with its actions.
 * **🗣️ Voice Control:** Listens to natural speech commands via Python `SpeechRecognition` and converts intent into physical actions.
-* ** Speech ** Talks to us in a human voice.
+* **Speech:** Talks to us in a human voice.
 * **🔌 Hybrid Architecture:**
 * **The Brain (Python):** Handles speech-to-text, LLM reasoning, and command parsing.
 * **The Body (C++/Arduino):** Handles real-time motor control and display rendering.
 
 
-* ** 🚗 Mobile Base:** 2-Wheel Drive system capable of navigating its environment based on voice commands.
+* **🚗 Mobile Base:** 2-Wheel Drive system capable of navigating its environment based on voice commands.
 
 ---
 
